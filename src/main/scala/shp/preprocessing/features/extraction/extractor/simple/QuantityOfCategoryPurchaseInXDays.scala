@@ -6,5 +6,5 @@ import shp.preprocessing.features.extraction.extractor.Predicates
 
 class QuantityOfCategoryPurchaseInXDays(val days: Int)
   extends Sum(List(Predicates.inLastXDaysBeforeOffer(days), Predicates.ofOfferCategory), Transaction.getPurchaseQuantity) {
-  def featureName = s"QuantityOfBrandPurchaseIn${days}Days"
+  def featureName = s"QuantityOfCategoryPurchaseIn${days}Days"
 }

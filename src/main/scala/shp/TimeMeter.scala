@@ -7,7 +7,6 @@ class TimeMeter private (val label: String, val startMillis: Long) {
   def stop(): Unit = {
     if (TimeMeter.active) {
       val measurement = System.currentTimeMillis() - startMillis;
-      println(measurement)
       val msg = String.format("%s - %sms", label, measurement.toString);
       println(msg);
     }
