@@ -19,6 +19,14 @@ object Predicates {
     t.category.equals(o.category)
   }
 
+  def ofOfferDept(t: Transaction, h: History, o: Offer): Boolean = {
+    t.dept.equals(o.category.take(t.dept.length))
+  }
+
+  def ofChain(t: Transaction, h: History, o: Offer): Boolean = {
+    t.chain.equals(h.chain)
+  }
+
   def isReturn(t: Transaction, h: History, o: Offer): Boolean = {
     t.purchaseAmount < 0
   }
